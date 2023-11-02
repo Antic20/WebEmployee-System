@@ -1,0 +1,89 @@
+﻿@model List<Employee>
+
+	<div class="container"> 
+		<div class="row pt-4 pb-3">
+			<div class="col-6">
+				<h2 class="text-primary">
+					Employee List
+				</h2>
+			</div>
+			<div class="col-6 text-end">
+				<a asp-controller="Employee" asp-action="Add" class="btn btn-primary">
+				<i class="bi bi-plus-circle"></i>	Add New Employee
+				</a>
+			</div>
+		</div>
+<table class="table table-bordered table-striped">
+<thead>
+	<tr>
+		<th>
+      Employee Id
+		</th>
+		<th>
+		First Name
+		</th>
+		<th>
+      Last Name
+		</th>
+		<th>
+		Address
+		</th>
+		<th>
+		Email
+		</th>
+	    <th>
+		Net Salary
+		</th>
+		<th>
+		Position
+		</th>
+		
+	</tr>
+	</thead>
+	<tbody>
+		@foreach(var obj in Model){ 
+		<tr>
+			<td>
+			@obj.EmployeeId
+			</td>
+			<td>
+			@obj.FirstName
+			</td>
+			<td>
+			@obj.LastName
+			</td>
+			<td>
+			@obj.Address
+			</td>
+			<td>
+			@obj.NetSalary
+			</td>
+			<td>
+			@obj.Position
+			</td>
+			<td>
+			  <div class="w-75 btn-group" role="group">
+							<a asp-controller="Employee" asp-action="Edit" asp-route-EmployeeId="@obj.EmployeeId" class="btn btn-primary mx-2">
+				   <i class="bi bi-pencil-square"></i> Edit
+			</a>
+							<a asp-controller="Employee" asp-action="Delete" asp-route-EmployeeId="@obj.EmployeeId" class="btn btn-danger mx-2">
+					<i class="bi bi-trash-fill"></i> Delete
+			</a>
+							<a asp-controller="Employee" asp-action="Details" asp-route-EmployeeId="@obj.EmployeeId" class="btn btn-primary mx-2">
+				    <i class="bi bi-person-lines-fill"></i> Details
+			</a>
+			  </div>
+			</td>
+		</tr>
+
+		}
+	</tbody>
+</table>
+</div>
+<div>
+	<div class="export-buttons">
+		<a asp-action="ExportToExcel" class="btn btn-success">Export to Excel</a>
+		<a asp-action="ExportToCsv" class="btn btn-info">Export to CSV</a>
+	</div>
+
+</div>

@@ -1,0 +1,42 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Salary Calculation";
+}
+
+<h2>Salary Calculation for @Model.FirstName @Model.LastName</h2>
+
+<div>
+    <dl>
+        <dt>First Name:</dt>
+        <dd>@Model.FirstName</dd>
+        <dt>Last Name:</dt>
+        <dd>@Model.LastName</dd>
+        <dt>Address:</dt>
+        <dd>@Model.Address</dd>
+        <dt>Email:</dt>
+        <dd>@Model.Email</dd>
+        <dt>Position:</dt>
+        <dd>@Model.Position</dd>
+        <dt>Gross Salary:</dt>
+        <dd>@Model.GrossSalary</dd>
+        <dt>Pay Specification:</dt>
+        <dd>@Model.PaySpecification</dd>
+        <dt>Net Salary:</dt>
+        <dd>@Model.NetSalary</dd>
+        <dt>Tax:</dt>
+        <dd>@Model.Tax</dd>
+        <dt>PensionContribution:</dt>
+        <dd>@Model.PensionContribution</dd>
+        <dt>HealthContribution:</dt>
+        <dd>@Model.HealthContribution</dd>
+        <dt>UnemploymentContribution:</dt>
+        <dd>@Model.UnemploymentContribution</dd>
+        <dt>TotalTaxesAndContributions:</dt>
+        <dd>@Model.TotalTaxesAndContributions</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
